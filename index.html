@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080px, initial-scale=1.0">
+  <title>Ciência de dados - Dataset</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+  <main>
+    <h1>Simule o valor do seu carro 💰</h1>
+
+    <div class="abasGroup">
+      <button onclick="trocarAba(this)" class="btnAba" id="btnAbaPrever">Prever resultado</button>
+      <button onclick="trocarAba(this)" class="btnAba" id="btnAbaAdicionar">Adicionar registros</button>
+    </div>
+
+    <section class="sctAba" id="predicao">
+      <h2>
+        Dados do Carro
+      </h2>
+
+      <div class="formRow">
+        <div class="inputField col-m">
+          <label for="MarcaSelect">Marca</label>
+          <select onchange="(e) => {
+            console.log({e});
+          }" type="text" name="MarcaSelect" id="MarcaSelect"></select>
+        </div>
+
+        <div class="inputField col-p">
+          <label for="ModeloSelect">Modelo</label>
+          <select type="text" name="ModeloSelect" id="ModeloSelect"></select>
+        </div>
+
+        <div class="inputField col-p">
+          <label for="CombustivelSelect">Combustível</label>
+          <select type="text" name="CombustivelSelect" id="CombustivelSelect"></select>
+        </div>
+
+        <div class="inputField col-p">
+          <label for="CoresSelect">Cor</label>
+          <select type="text" name="CoresSelect" id="CoresSelect"></select>
+        </div>
+
+        <div class="inputField col-p">
+          <label for="TransmissaoSelect">Transmissão</label>
+          <select type="text" name="TransmissaoSelect" id="TransmissaoSelect"></select>
+        </div>
+
+        <div class="inputField col-p">
+          <label for="CondicaoSelect">Condição</label>
+          <select type="text" name="CondicaoSelect" id="CondicaoSelect"></select>
+        </div>
+      </div>
+
+      <div class="formRow">
+        <div class="inputField col-pp">
+          <label for="AnoSelect">Ano</label>
+          <input type="number" name="Ano" id="Ano">
+        </div>
+
+        <div class="inputField col-p">
+          <label for="QuilometragemSelect">Quilometragem</label>
+          <input type="number" name="Quilometragem" id="Quilometragem">
+        </div>
+
+        <div class="inputField col-p checkbox">
+          <label for="Acidente">Sofreu acidente?</label>
+          <input type="checkbox" name="Acidente" id="Acidente">
+        </div>
+      </div>
+      <div id="secao-adicionais">
+        <h2>Acessórios e Tecnologia</h2><br>
+        <ul id="lista-adicionais"></ul>
+      </div>
+
+      <button class="submit">Estimar Valor</button>
+      </select>
+    </section>
+    <section class="sctAba" id="novosRegistros">Adicionar registros</section>
+  </main>
+</body>
+  <script src="./script/selects.js"></script>
+  <script src="./script/adicionais.js"></script>
+  <script src="./script/index.js"></script>
+</html>
