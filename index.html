@@ -56,18 +56,18 @@
 
       <div class="formRow">
         <div class="inputField col-pp">
-          <label for="AnoSelect">Ano</label>
-          <input type="number" name="Ano" id="Ano">
+          <label for="AnoInput">Ano</label>
+          <input type="number" name="AnoInput" id="AnoInput">
         </div>
 
         <div class="inputField col-p">
-          <label for="QuilometragemSelect">Quilometragem</label>
-          <input type="number" name="Quilometragem" id="Quilometragem">
+          <label for="QuilometragemInput">Quilometragem</label>
+          <input type="number" name="QuilometragemInput" id="QuilometragemInput">
         </div>
 
         <div class="inputField col-p checkbox">
-          <label for="Acidente">Sofreu acidente?</label>
-          <input type="checkbox" name="Acidente" id="Acidente">
+          <label for="AcidenteCheck">Sofreu acidente?</label>
+          <input type="checkbox" name="AcidenteCheck" id="AcidenteCheck">
         </div>
       </div>
       <div id="secao-adicionais">
@@ -75,7 +75,7 @@
         <ul id="lista-adicionais"></ul>
       </div>
 
-      <button class="submit">Estimar Valor</button>
+      <button class="submit" id="solicitaPrevisao">Estimar Valor</button>
       </select>
     </section>
     <section class="sctAba" id="novosRegistros">Adicionar registros</section>
@@ -83,5 +83,6 @@
 </body>
   <script src="./script/selects.js"></script>
   <script src="./script/adicionais.js"></script>
+  <script src="./script/formFunctions.js"></script>
   <script src="./script/index.js"></script>
 </html>

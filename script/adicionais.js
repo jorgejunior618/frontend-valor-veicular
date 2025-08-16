@@ -16,8 +16,8 @@ for (let i = 0; i < listaAdicionais.length; i++) {
   const itemAdicional = document.createElement('li')
   itemAdicional.className = 'item-adicional'
   itemAdicional.innerHTML = `
-      <label for="adicional${adicional}">${adicional}</label>
-      <input type="checkbox" name="adicional${adicional}" id="adicional${adicional}">
+      <label for="adicional-${adicional}">${adicional}</label>
+      <input type="checkbox" name="adicional-${adicional}" id="adicional-${adicional}">
     `
   secaoAdicionais.appendChild(itemAdicional)
 }

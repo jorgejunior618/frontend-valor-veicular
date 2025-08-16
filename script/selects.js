@@ -5,6 +5,15 @@ const selectCores = document.getElementById('CoresSelect')
 const selectTransmissao = document.getElementById('TransmissaoSelect')
 const selectCondicao = document.getElementById('CondicaoSelect')
 
+const selectsForm = [
+  selectMarca,
+  selectModelo,
+  selectCombustivel,
+  selectCores,
+  selectTransmissao,
+  selectCondicao
+]
+
 const marcas = {
   'Hyundai': ['Tucson', 'Sonata', 'Santa Fe', 'Elantra', 'Kona'],
   'Land Rover': ['Range Rover', 'Velar', 'Discovery', 'Evoque', 'Defender'],
