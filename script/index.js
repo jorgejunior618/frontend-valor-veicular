@@ -52,27 +52,16 @@ btnPrevisao.addEventListener('click', () => {
     adicionaisForm = adicionaisForm.substring(0, adicionaisForm.length - 2)
   }
   dadosForm = {
-    "Car Model": "Honda - Civic",
-    "Fuel Type": "Diesel",
-    "Color": "Yellow",
-    "Transmission": "Manual",
-    "Condition": "Like New",
-    "Year": 2020,
-    "Mileage": 123123,
-    "Options/Features": "Bluetooth",
-    "Accident": "No"
-}
-  // dadosForm = {
-  //   "Car Model": `${selectMarca.value} - ${selectModelo.value}`,
-  //   "Fuel Type": selectCombustivel.value,
-  //   "Color": selectCores.value,
-  //   "Transmission": selectTransmissao.value,
-  //   "Condition": selectCondicao.value,
-  //   "Year": Number(inputAno.value),
-  //   "Mileage": Number(inputQuilometragem.value),
-  //   "Options/Features": adicionaisForm,
-  //   "Accident": chkBxAcidente.checked ? 'Yes' : 'No'
-  // }
+    "Car Model": `${selectMarca.value} - ${selectModelo.value}`,
+    "Fuel Type": selectCombustivel.value,
+    "Color": selectCores.value,
+    "Transmission": selectTransmissao.value,
+    "Condition": selectCondicao.value,
+    "Year": Number(inputAno.value),
+    "Mileage": Number(inputQuilometragem.value),
+    "Options/Features": adicionaisForm,
+    "Accident": chkBxAcidente.checked ? 'Yes' : 'No'
+  }
 
   solicitaPrevisao(dadosForm, setValorPrevisao)
 
