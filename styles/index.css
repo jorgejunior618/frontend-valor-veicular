@@ -165,3 +165,10 @@ button.submit {
   padding: 10px 24px;
   margin-left: auto;
 }
+#resultado-previsao.hide {
+  display: none;
+}
+
+#resultado-previsao p {
+  margin-top: 12px;
+}

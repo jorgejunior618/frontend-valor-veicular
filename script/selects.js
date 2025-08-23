@@ -22,15 +22,14 @@ const marcas = {
   'Volkswagen': ['Golf', 'Passat', 'Tiguan', 'Beetle', 'Jetta'],
   'Mazda': ['CX-9', 'CX-5', 'MX-5 Miata', 'Mazda6', 'Mazda3'],
   'Audi': ['Q5', 'Q7', 'A6', 'A4', 'A3'],
-  'Chevrolet': ['Traverse', 'Cruze', 'Malibu', 'Silverado', 'Equinox'],
+  'Chevrolet': ['Traverse', 'Equinox', 'Malibu', 'Cruze', 'Silverado', 'Camaro'],
   'Jaguar': ['XJ', 'XF', 'I-Pace', 'XE', 'F-Type'],
   'BMW': ['3 Series', 'X3', 'X7', '5 Series', 'X5'],
   'Fiat': ['500X', '500', 'Doblo', 'Panda', 'Tipo'],
   'Ford': ['Mustang', 'Escape', 'Focus', 'F-150', 'Explorer'],
   'Tesla': ['Model Y', 'Model 3', 'Model X', 'Model S'],
   'Toyota': ['RAV4', 'Highlander', 'Camry', 'Corolla', 'Tacoma'],
-  'Chevy': ['Equinox', 'Malibu', 'Traverse', 'Silverado', 'Camaro'],
-  'Mercedes': ['C-Class', 'E-Class', 'A-Class', 'GLC', 'S-Class'],
+  'Mercedes': ['C-Class', 'E-Class', 'A-Class', 'GLC', 'S-Class', 'G-Class', 'Maybach'],
   'Nissan': ['Altima', 'Sentra', 'Leaf', 'Maxima', 'Rogue'],
   'Chrysler': ['300', 'Charger', 'Pacifica', 'Voyager', 'Dodge Durango'],
   'Subaru': ['Legacy', 'Forester', 'Impreza', 'Crosstrek', 'Outback'],
@@ -41,16 +40,39 @@ const marcas = {
   'Rolls-Royce': ['Phantom', 'Cullinan', 'Ghost'],
   'Maserati': ['Levante', 'Quattroporte', 'Ghibli'],
   'Bentley': ['Flying Spur', 'Continental GT', 'Bentayga'],
-  'Mercedes-Benz': ['G-Class', 'Maybach', 'S-Class'],
   'Ferrari': ['Portofino', '488 GTB', 'F8 Tributo'],
   'McLaren': ['720S', 'P1', '570S'],
 }
-const tiposCombustiveis = ['Híbrido', 'Diesel', 'Elétrico', 'Gasolina', 'Petroleo']
-const cores = ['Preto', 'Prata', 'Amarelo', 'Laranja', 'Verde', 'Branco', 'Cinza', 'Vermelho', 'Marrom', 'Azul']
-const transmissoes = ['Automático', 'Manual']
-const listaCondicao = ['Usado', 'Seminovo', 'Novo']
 
-const popularSelect = (itens, select) => {
+const tiposCombustiveis = {
+  'Híbrido': 'Hybrid',
+  'Diesel': 'Diesel',
+  'Elétrico': 'Electric',
+  'Gasolina': 'Gasoline',
+}
+const cores = {
+  'Preto': 'Black',
+  'Prata': 'Silver',
+  'Amarelo': 'Yellow',
+  'Laranja': 'Orange',
+  'Verde': 'Green',
+  'Branco': 'White',
+  'Cinza': 'Gray',
+  'Vermelho': 'Red',
+  'Marrom': 'Brown',
+  'Azul': 'Blue',
+}
+const transmissoes = {
+  'Automático': 'Automatic',
+  'Manual': 'Manual',
+}
+const listaCondicao = {
+  'Usado': 'Used',
+  'Seminovo': 'Like New',
+  'Novo': 'New',
+}
+
+const popularSelectMarcas = (itens, select) => {
   const option_1 = document.createElement("option")
   option_1.value = 'Selecionar'
   option_1.innerText = 'Selecionar'
@@ -65,8 +87,25 @@ const popularSelect = (itens, select) => {
   select.value = 'Selecionar'
 }
 
-popularSelect(Object.keys(marcas), selectMarca)
-popularSelect([], selectModelo)
+const popularSelect = (itens, select) => {
+  const option_1 = document.createElement("option")
+  option_1.value = 'Selecionar'
+  option_1.innerText = 'Selecionar'
+  select.appendChild(option_1)
+
+  const l_itens = Object.keys(itens)
+
+  for (let i = 0; i < l_itens.length; i++) {
+    const option_i = document.createElement("option")
+    option_i.value = itens[l_itens[i]]
+    option_i.innerText = l_itens[i]
+    select.appendChild(option_i)
+  }
+  select.value = 'Selecionar'
+}
+
+popularSelectMarcas(Object.keys(marcas), selectMarca)
+popularSelectMarcas([], selectModelo)
 selectModelo.setAttribute('disabled', null)
 popularSelect(tiposCombustiveis, selectCombustivel)
 popularSelect(cores, selectCores)
@@ -79,10 +118,9 @@ selectMarca.onchange = (event) => {
 
   if (marcaSelecionada === 'Selecionar') {
     selectModelo.setAttribute('disabled', null)
-    popularSelect([], selectModelo)
+    popularSelectMarcas([], selectModelo)
   } else {
     selectModelo.removeAttribute('disabled')
-    popularSelect(marcas[marcaSelecionada], selectModelo)
+    popularSelectMarcas(marcas[marcaSelecionada], selectModelo)
   }
-  
 }

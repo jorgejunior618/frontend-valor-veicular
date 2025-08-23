@@ -1,23 +1,25 @@
-const listaAdicionais = [
-    'Bancos Aquecidos',
-    'GPS',
-    'Bluetooth',
-    'Bancos de Couro',
-    'Câmera de Ré',
-    'Partida Remota',
-    'Teto Solar',
-    'Navegação por Satélite'
-]
+const listaAdicionais = {
+  'Bancos Aquecidos': 'Heated Seats',
+  'GPS': 'GPS',
+  'Bluetooth': 'Bluetooth',
+  'Bancos de Couro': 'Leather Seats',
+  'Câmera de Ré': 'Backup Camera',
+  'Partida Remota': 'Remote Start',
+  'Teto Solar': 'Sunroof',
+  'Navegação por Satélite': 'Navigation'
+}
 
 const secaoAdicionais = document.getElementById('lista-adicionais')
 
-for (let i = 0; i < listaAdicionais.length; i++) {
-  const adicional = listaAdicionais[i]
+const itens_adicionais = Object.keys(listaAdicionais)
+
+for (let i = 0; i < itens_adicionais.length; i++) {
+  const adicionalNome = itens_adicionais[i]
   const itemAdicional = document.createElement('li')
   itemAdicional.className = 'item-adicional'
   itemAdicional.innerHTML = `
-      <label for="adicional-${adicional}">${adicional}</label>
-      <input type="checkbox" name="adicional-${adicional}" id="adicional-${adicional}">
+      <label for="adicional-${adicionalNome}">${adicionalNome}</label>
+      <input type="checkbox" name="adicional-${adicionalNome}" id="adicional-${adicionalNome}">
     `
   secaoAdicionais.appendChild(itemAdicional)
 }

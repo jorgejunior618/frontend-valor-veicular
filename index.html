@@ -12,7 +12,7 @@
 
     <div class="abasGroup">
       <button onclick="trocarAba(this)" class="btnAba" id="btnAbaPrever">Prever resultado</button>
-      <button onclick="trocarAba(this)" class="btnAba" id="btnAbaAdicionar">Adicionar registros</button>
+      <button onclick="trocarAba(this)" class="btnAba" id="btnAbaAdicionar">Múltiplas previsões</button>
     </div>
 
     <section class="sctAba" id="predicao">
@@ -76,9 +76,14 @@
       </div>
 
       <button class="submit" id="solicitaPrevisao">Estimar Valor</button>
-      </select>
+      <div id="resultado-previsao" class="hide">
+        <h2>Resultado da previsão</h2>
+        <p>O valor estimado para o veículo informado acima é: </p><strong id="prediction-result"></strong>
+      </div>
     </section>
-    <section class="sctAba" id="novosRegistros">Adicionar registros</section>
+
+    </section>
+    <section class="sctAba" id="novosRegistros">Múltiplas previsões</section>
   </main>
 </body>
   <script src="./script/selects.js"></script>
