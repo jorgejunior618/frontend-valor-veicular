@@ -111,6 +111,9 @@ main {
 .col-gg {
   width: 50%;
 }
+#btnAbaAdicionar {
+  display: none;
+}
 .inputField {
   display: flex;
   flex-direction: column;
