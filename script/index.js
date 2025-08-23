@@ -48,6 +48,7 @@ btnPrevisao.addEventListener('click', () => {
       adicionaisForm += `${listaAdicionais[inputAdicional.name.split('-')[1]]}, `
     }
   }
+  if (adicionaisForm.length === 0) return alert('Preencha os Acessórios do veículo')
   if (adicionaisForm.endsWith(', ')) {
     adicionaisForm = adicionaisForm.substring(0, adicionaisForm.length - 2)
   }
