@@ -8,7 +8,7 @@ const validaForm = (selects, inputAno, inputQuilometragem) => {
   }
   const ano = Number(inputAno.value)
   const km = Number(inputQuilometragem.value)
-  if (isNaN(ano) || ano < 1 || isNaN(km) || km < 0) return false
+  if (isNaN(ano) || ano < 1990 || ano > 2025 || isNaN(km) || km < 0) return false
 
   return true
 }
